@@ -1,0 +1,323 @@
+```html
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="theme-color" content="#eff0e3">
+    <meta name="description" content="دعوة زفاف زيد وياسمين">
+
+    <title>دعوة زفاف زيد وياسمين</title>
+
+    <!-- الخطوط العربية -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- ملف التصميم -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  
+<!-- زخارف نباتية فاخرة -->
+<svg class="flower flower-top" viewBox="0 0 150 180"
+     aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+    <g fill="none" stroke="#8c9b7b" stroke-width="1.8"
+       stroke-linecap="round" stroke-linejoin="round">
+        <path d="M92 170 C83 128 103 94 77 55 C69 43 64 27 69 12"/>
+        <path d="M89 144 C112 124 130 125 140 110 C117 107 99 119 89 144Z"
+              fill="#8c9b7b" fill-opacity=".12"/>
+        <path d="M83 119 C61 102 44 104 31 88 C55 85 73 99 83 119Z"
+              fill="#8c9b7b" fill-opacity=".12"/>
+        <path d="M79 88 C100 72 107 57 105 42 C87 52 79 68 79 88Z"
+              fill="#8c9b7b" fill-opacity=".12"/>
+        <path d="M68 58 C48 48 40 33 43 19 C60 28 68 41 68 58Z"
+              fill="#8c9b7b" fill-opacity=".12"/>
+        <path d="M69 13 C55 20 52 34 61 44 C71 38 75 25 69 13Z"
+              fill="#c6a45b" fill-opacity=".18" stroke="#c6a45b"/>
+        <path d="M69 13 C83 20 86 34 77 44 C67 38 63 25 69 13Z"
+              fill="#c6a45b" fill-opacity=".18" stroke="#c6a45b"/>
+        <path d="M69 13 C69 25 69 34 69 43" stroke="#c6a45b"/>
+    </g>
+</svg>
+
+<svg class="flower flower-bottom" viewBox="0 0 150 180"
+     aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+    <g fill="none" stroke="#8c9b7b" stroke-width="1.8"
+       stroke-linecap="round" stroke-linejoin="round">
+        <path d="M58 170 C67 128 47 94 73 55 C81 43 86 27 81 12"/>
+        <path d="M61 144 C38 124 20 125 10 110 C33 107 51 119 61 144Z"
+              fill="#8c9b7b" fill-opacity=".12"/>
+        <path d="M67 119 C89 102 106 104 119 88 C95 85 77 99 67 119Z"
+              fill="#8c9b7b" fill-opacity=".12"/>
+        <path d="M71 88 C50 72 43 57 45 42 C63 52 71 68 71 88Z"
+              fill="#8c9b7b" fill-opacity=".12"/>
+        <path d="M82 58 C102 48 110 33 107 19 C90 28 82 41 82 58Z"
+              fill="#8c9b7b" fill-opacity=".12"/>
+        <path d="M81 13 C95 20 98 34 89 44 C79 38 75 25 81 13Z"
+              fill="#c6a45b" fill-opacity=".18" stroke="#c6a45b"/>
+        <path d="M81 13 C67 20 64 34 73 44 C83 38 87 25 81 13Z"
+              fill="#c6a45b" fill-opacity=".18" stroke="#c6a45b"/>
+        <path d="M81 13 C81 25 81 34 81 43" stroke="#c6a45b"/>
+    </g>
+</svg>
+
+    <!-- الصفحة الأولى: غلاف الدعوة -->
+    <section class="cover-screen" id="cover">
+
+        <div class="cover-card">
+
+            <p class="bismillah">
+                بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيم
+            </p>
+
+            <p class="cover-intro">
+                بكل الحب والفرح ندعوكم لمشاركتنا
+            </p>
+
+            <h1>حفل زفاف</h1>
+
+            <div class="name-circle">
+
+                <span class="groom-name">زيد</span>
+
+                <span class="ampersand">&amp;</span>
+
+                <span class="bride-name">ياسمين</span>
+
+                <button
+                    type="button"
+                    class="open-button"
+                    id="openInvitation"
+                >
+                    <span>❀</span>
+                    افتح الدعوة
+                </button>
+
+            </div>
+
+            <p class="cover-date">
+                الجمعة · ١٣ تشرين الثاني ٢٠٢٦
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- الصفحة الثانية: تفاصيل الدعوة -->
+    <main class="invitation-content" id="invitation" hidden>
+
+        <!-- الآية القرآنية -->
+        <section class="verse-section">
+
+            <p class="verse-bismillah">
+                بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيم
+            </p>
+
+            <p class="quran-verse">
+                ﴿ وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُمْ مِنْ
+                أَنْفُسِكُمْ أَزْوَاجًا لِتَسْكُنُوا إِلَيْهَا
+                وَجَعَلَ بَيْنَكُمْ مَوَدَّةً وَرَحْمَةً ﴾
+            </p>
+
+            <p class="verse-reference">
+                سورة الروم · الآية ٢١
+            </p>
+
+        </section>
+
+
+        <div class="divider">
+            <span>✧</span>
+        </div>
+
+
+        <!-- نص الدعوة -->
+       
+           
+<section class="message-card">
+    <p class="invitation-bismillah">
+        بسم الله الرحمن الرحيم
+    </p>
+
+    <p class="invitation-text">
+        بكلّ مشاعر الفرح والسرور، تتشرّف
+    </p>
+
+    <p class="invitation-family">
+        عائلة السيد عمر المفالحة
+        <br>
+        وعائلة السيد أكرم أبو دية
+    </p>
+
+    <p class="invitation-text">
+        بدعوتكم لحضور حفل زفاف
+    </p>
+
+    <p class="invitation-groom">
+        ابنهم المهندس زيد عمر المفالحة
+    </p>
+
+    <p class="invitation-text">
+        على ابنتهم الكريمة ياسمين
+    </p>
+
+    <p class="invitation-text">
+        وذلك في أجواءٍ يملؤها الفرح والمودّة،
+        سائلين الله أن يبارك لهما ويجمع بينهما على خير.
+    </p>
+
+    <p class="invitation-closing">
+        حضوركم يزيد أفراحنا بهجةً،
+        وبكم تكتمل فرحتنا.
+    </p>
+</section>
+
+
+
+
+
+
+        <div class="divider">
+            <span>✧</span>
+        </div>
+
+
+        <!-- موعد الزفاف -->
+        <section class="date-section">
+
+            <h2>موعد الزفاف</h2>
+
+            <div class="date-card">
+
+                <p class="date-month">
+                    تشرين الثاني ٢٠٢٦
+                </p>
+
+                <p class="date-day">
+                    ١٣
+                </p>
+
+                <p class="date-time">
+                    الجمعة
+                    <span>•</span>
+                    ٥:٣٠ مساءً
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <div class="divider">
+            <span>✧</span>
+        </div>
+
+
+        <!-- العد التنازلي -->
+        <section class="countdown-section">
+
+            <h2>العد التنازلي</h2>
+
+            <div class="countdown" id="countdown">
+
+                <div class="time-box">
+                    <span id="days">٠٠</span>
+                    <small>أيام</small>
+                </div>
+
+                <div class="time-box">
+                    <span id="hours">٠٠</span>
+                    <small>ساعات</small>
+                </div>
+
+                <div class="time-box">
+                    <span id="minutes">٠٠</span>
+                    <small>دقائق</small>
+                </div>
+
+                <div class="time-box">
+                    <span id="seconds">٠٠</span>
+                    <small>ثوانٍ</small>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <div class="divider">
+            <span>✧</span>
+        </div>
+
+
+        <!-- موقع القاعة -->
+        <section class="location-section">
+
+            <h2>الموقع</h2>
+
+            <div class="location-card">
+
+                <span class="location-icon">⌖</span>
+
+                <div class="location-info">
+
+                    <h3>قاعات الكرم</h3>
+
+                    <p>الأردن</p>
+
+                    <p class="location-note">
+                        يسعدنا حضوركم ومشاركتنا فرحتنا
+                    </p>
+
+                </div>
+
+            </div>
+
+            <a
+                class="directions-button"
+                href="https://maps.app.goo.gl/YXYwab77LQf4yD4CA"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <span>⌖</span>
+                احصل على الاتجاهات
+            </a>
+
+        </section>
+
+
+        <!-- ختام الدعوة -->
+        <footer class="closing">
+
+            <span class="closing-flower">❦</span>
+
+            <p>حضوركم فرحتنا</p>
+
+            <p>وبكم تكتمل سعادتنا</p>
+
+        </footer>
+
+
+        <button
+            type="button"
+            class="back-button"
+            id="backToCover"
+        >
+            العودة إلى الغلاف ↑
+        </button>
+
+    </main>
+
+
+    <!-- ملف الحركة والعد التنازلي -->
+    <script src="script.js"></script>
+
+</body>
+</html>
+```

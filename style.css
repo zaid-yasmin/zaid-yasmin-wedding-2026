@@ -1,0 +1,731 @@
+
+/* إعدادات عامة */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --sage: #8b9279;
+    --sage-dark: #626b54;
+    --cream: #f8f6ed;
+    --paper: #fffdf7;
+    --gold: #b7a477;
+    --text: #555849;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    background: var(--cream);
+    color: var(--text);
+    font-family: "Cairo", sans-serif;
+    overflow-x: hidden;
+    line-height: 1.9;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+
+
+
+/* زخارف نباتية مرسومة في زوايا الدعوة */
+.flower {
+    position: fixed;
+    z-index: 5;
+    width: clamp(85px, 15vw, 145px);
+    height: auto;
+    pointer-events: none;
+    opacity: 0.82;
+    filter: drop-shadow(0 3px 8px rgba(90, 100, 75, 0.08));
+}
+
+.flower-top {
+    top: 8px;
+    right: 8px;
+}
+
+.flower-bottom {
+    bottom: 8px;
+    left: 8px;
+}
+
+
+/* الغلاف الأول */
+.cover-screen {
+    min-height: 100vh;
+    min-height: 100dvh;
+    padding: 35px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background:
+        radial-gradient(ellipse at center, rgba(255,255,255,0.78), transparent 70%),
+        #eff0e3;
+}
+
+.cover-card {
+    width: min(100%, 510px);
+    padding: clamp(24px, 6vw, 48px) 18px;
+    border: 1px solid rgba(139, 146, 121, 0.55);
+    outline: 1px solid rgba(183, 164, 119, 0.35);
+    outline-offset: 7px;
+    background: rgba(255, 253, 247, 0.35);
+    position: relative;
+}
+
+.bismillah,
+.verse-bismillah {
+    font-family: "Amiri", serif;
+    font-size: clamp(20px, 4.5vw, 26px);
+    color: var(--sage-dark);
+}
+
+.cover-intro {
+    margin-top: 24px;
+    font-size: clamp(14px, 3.5vw, 17px);
+    color: #777b69;
+}
+
+.cover-card h1 {
+    margin: 5px 0 12px;
+    color: var(--sage-dark);
+    font-family: "Amiri", serif;
+    font-size: clamp(31px, 7vw, 43px);
+    font-weight: 400;
+}
+
+.name-circle {
+    width: min(76vw, 285px);
+    aspect-ratio: 1;
+    margin: 10px auto 20px;
+    border: 1px solid var(--gold);
+    border-radius: 50%;
+    outline: 1px solid rgba(183, 164, 119, 0.55);
+    outline-offset: 7px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background: rgba(255, 253, 247, 0.25);
+}
+
+.groom-name,
+.bride-name {
+    font-family: "Amiri", serif;
+    color: var(--sage-dark);
+    font-size: clamp(34px, 8vw, 47px);
+    line-height: 1.3;
+}
+
+.ampersand {
+    color: var(--gold);
+    font-family: Georgia, serif;
+    font-size: 23px;
+    line-height: 1.4;
+}
+
+.open-button {
+    margin-top: 12px;
+    padding: 8px 23px;
+    border: 1px solid var(--sage);
+    border-radius: 30px;
+    background: var(--sage-dark);
+    color: white;
+    font-family: "Cairo", sans-serif;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background 0.25s ease, transform 0.25s ease;
+}
+
+.open-button span {
+    margin-left: 5px;
+    color: #e9d9ac;
+}
+
+.open-button:hover {
+    background: #747d64;
+    transform: translateY(-2px);
+}
+
+.open-button:focus-visible,
+.directions-button:focus-visible,
+.back-button:focus-visible {
+    outline: 3px solid var(--gold);
+    outline-offset: 4px;
+}
+
+.cover-date {
+    margin-top: 22px;
+    font-size: 14px;
+    color: #747967;
+}
+
+/* الصفحة الثانية */
+.invitation-content {
+    width: 100%;
+    max-width: 760px;
+    min-height: 100vh;
+    margin: 0 auto;
+    padding: 42px 20px 30px;
+    text-align: center;
+    animation: appear 0.8s ease both;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* الآية القرآنية */
+.verse-section {
+    max-width: 620px;
+    margin: 0 auto;
+}
+
+.verse-bismillah {
+    margin-bottom: 22px;
+}
+
+.quran-verse {
+    font-family: "Amiri", serif;
+    font-size: clamp(22px, 5vw, 31px);
+    line-height: 2;
+    color: #656d55;
+}
+
+.verse-reference {
+    margin-top: 12px;
+    font-size: 14px;
+    color: #898875;
+}
+
+/* الفواصل الزخرفية */
+.divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 13px;
+    margin: 30px auto;
+    color: var(--gold);
+    max-width: 300px;
+}
+
+.divider::before,
+.divider::after {
+    content: "";
+    height: 1px;
+    flex: 1;
+    background: linear-gradient(to left, transparent, var(--gold), transparent);
+}
+
+.divider span {
+    font-size: 23px;
+    line-height: 1;
+}
+
+/* نص الدعوة */
+.message-card {
+    padding: 27px 20px;
+    border: 1px solid rgba(183, 164, 119, 0.55);
+    border-radius: 18px;
+    background: rgba(255, 253, 247, 0.82);
+    box-shadow: 0 8px 25px rgba(86, 91, 72, 0.05);
+}
+
+.message-card p {
+    font-family: "Amiri", serif;
+    font-size: clamp(21px, 4.5vw, 27px);
+    line-height: 1.9;
+    color: #626653;
+}
+
+.message-card .groom-full-name {
+    margin-top: 8px;
+    font-size: clamp(25px, 5.5vw, 32px);
+    font-weight: 700;
+    color: var(--sage-dark);
+}
+
+/* موعد الزفاف */
+.date-section h2,
+.countdown-section h2,
+.location-section h2 {
+    margin-bottom: 17px;
+    font-family: "Amiri", serif;
+    font-size: 28px;
+    font-weight: 400;
+    color: var(--sage-dark);
+}
+
+.date-card {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 22px 15px;
+    border: 1px solid rgba(183, 164, 119, 0.5);
+    border-radius: 18px;
+    background: var(--paper);
+    box-shadow: 0 8px 25px rgba(86, 91, 72, 0.05);
+}
+
+.date-month {
+    font-size: 17px;
+    color: #777c69;
+}
+
+.date-day {
+    margin: 2px 0;
+    font-family: "Amiri", serif;
+    font-size: 66px;
+    line-height: 1.3;
+    color: var(--sage-dark);
+}
+
+.date-time {
+    font-size: 17px;
+    color: #666b59;
+}
+
+.date-time span {
+    margin: 0 7px;
+    color: var(--gold);
+}
+
+/* العد التنازلي */
+.countdown-section {
+    padding: 24px 16px;
+    border: 1px solid rgba(183, 164, 119, 0.42);
+    border-radius: 20px;
+    background: rgba(255, 253, 247, 0.8);
+}
+
+.countdown-section h2 {
+    margin-bottom: 18px;
+}
+
+.countdown {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 9px;
+    direction: ltr;
+}
+
+.time-box {
+    padding: 13px 4px;
+    border: 1px solid rgba(139, 146, 121, 0.28);
+    border-radius: 14px;
+    background: #f7f7ef;
+}
+
+.time-box span {
+    display: block;
+    font-family: "Cairo", sans-serif;
+    font-size: clamp(22px, 5.5vw, 31px);
+    font-weight: 700;
+    line-height: 1.5;
+    color: var(--sage-dark);
+    font-variant-numeric: tabular-nums;
+}
+
+.time-box small {
+    display: block;
+    margin-top: 4px;
+    font-size: clamp(11px, 2.8vw, 13px);
+    color: #777b6b;
+}
+
+/* موقع القاعة */
+.location-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    max-width: 430px;
+    margin: 0 auto 18px;
+    padding: 20px;
+    border: 1px solid rgba(183, 164, 119, 0.5);
+    border-radius: 18px;
+    background: var(--paper);
+    text-align: right;
+}
+
+.location-icon {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    background: #eff0e3;
+    color: var(--sage-dark);
+    font-size: 31px;
+}
+
+.location-info h3 {
+    font-family: "Amiri", serif;
+    font-size: 25px;
+    font-weight: 700;
+    color: var(--sage-dark);
+}
+
+.location-info p {
+    font-size: 14px;
+    color: #777b6b;
+}
+
+.location-info .location-note {
+    margin-top: 5px;
+    font-size: 12px;
+}
+
+.directions-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 11px 25px;
+    border-radius: 30px;
+    background: var(--sage-dark);
+    color: white;
+    text-decoration: none;
+    font-family: "Cairo", sans-serif;
+    font-size: 15px;
+    transition: background 0.25s ease, transform 0.25s ease;
+}
+
+.directions-button:hover {
+    background: #747d64;
+    transform: translateY(-2px);
+}
+
+/* خاتمة الدعوة */
+.closing {
+    margin: 38px auto 24px;
+    color: #777b69;
+}
+
+.closing-flower {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 30px;
+    color: var(--gold);
+}
+
+.closing p {
+    font-family: "Amiri", serif;
+    font-size: 21px;
+}
+
+/* زر العودة إلى الغلاف */
+.back-button {
+    margin: 5px auto 15px;
+    padding: 9px 20px;
+    border: 1px solid rgba(139, 146, 121, 0.55);
+    border-radius: 25px;
+    background: transparent;
+    color: var(--sage-dark);
+    font-family: "Cairo", sans-serif;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+/* تحسين العرض على الهواتف */
+@media (max-width: 480px) {
+    .cover-screen {
+        padding: 28px 20px;
+    }
+
+    .cover-card {
+        padding: 28px 13px;
+    }
+
+    .cover-intro {
+        margin-top: 18px;
+    }
+
+    .name-circle {
+        width: min(72vw, 255px);
+    }
+
+    .invitation-content {
+        padding: 35px 16px 25px;
+    }
+
+    .divider {
+        margin: 24px auto;
+    }
+
+    .message-card {
+        padding: 22px 15px;
+    }
+
+    .countdown-section {
+        padding: 20px 10px;
+    }
+
+    .countdown {
+        gap: 6px;
+    }
+
+    .time-box {
+        padding: 10px 2px;
+    }
+
+    .location-card {
+        padding: 16px 12px;
+    }
+
+    .flower-top {
+        top: 8px;
+        right: 5px;
+    }
+
+    .flower-bottom {
+        bottom: 7px;
+        left: 5px;
+    }
+}
+
+/* احترام إعداد تقليل الحركة في الجهاز */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+
+/* حركة الأسماء المائلة في الصفحة الثانية */
+.message-card .couple-names {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    margin-top: 22px;
+    padding: 5px 0 12px;
+}
+
+.message-card .couple-names .groom-full-name,
+.message-card .couple-names .bride-full-name {
+    position: relative;
+    margin: 0;
+    font-family: "Amiri", serif;
+    font-size: clamp(30px, 7.5vw, 39px);
+    font-weight: 700;
+    line-height: 1.5;
+    color: var(--sage-dark);
+    white-space: nowrap;
+}
+
+.message-card .couple-names .groom-full-name {
+    z-index: 2;
+    transform: translate(9px, 4px) rotate(-4deg);
+}
+
+.message-card .couple-names .bride-full-name {
+    z-index: 1;
+    margin-top: -3px;
+    transform: translate(-8px, -3px) rotate(3deg);
+}
+
+.message-card .couple-names .couple-ampersand {
+    position: relative;
+    z-index: 3;
+    margin: -1px 0 -2px;
+    font-family: Georgia, serif;
+    font-size: 23px;
+    line-height: 1.2;
+    color: var(--gold);
+}
+
+/* دخول الاسمين من اتجاهين متعاكسين */
+@keyframes groomSlide {
+    from {
+        opacity: 0;
+        transform: translate(55px, 14px) rotate(-10deg);
+    }
+    to {
+        opacity: 1;
+        transform: translate(9px, 4px) rotate(-4deg);
+    }
+}
+
+@keyframes brideSlide {
+    from {
+        opacity: 0;
+        transform: translate(-55px, -12px) rotate(10deg);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-8px, -3px) rotate(3deg);
+    }
+}
+
+@keyframes ampersandReveal {
+    from {
+        opacity: 0;
+        transform: scale(0.5) rotate(-25deg);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) rotate(0);
+    }
+}
+
+.couple-names.is-animated .groom-full-name {
+    animation: groomSlide 1s cubic-bezier(.2, .75, .25, 1) 0.1s both;
+}
+
+.couple-names.is-animated .couple-ampersand {
+    animation: ampersandReveal 0.65s ease-out 0.45s both;
+}
+
+.couple-names.is-animated .bride-full-name {
+    animation: brideSlide 1s cubic-bezier(.2, .75, .25, 1) 0.3s both;
+}
+
+/* مربع أسماء العروسين */
+.couple-names-box {
+    position: relative;
+    width: min(100%, 340px);
+    margin: 28px auto;
+    padding: 24px 12px 20px;
+    text-align: center;
+    background: #f8f3e8;
+    border: 1.5px solid #c6a45b;
+    border-radius: 18px;
+    box-shadow: 0 6px 18px rgba(65, 83, 65, 0.10);
+}
+
+/* زخرفة أعلى المربع */
+.names-decoration {
+    display: inline-block;
+    margin-bottom: 12px;
+    color: #a68137;
+    font-family: "Amiri", serif;
+    font-size: 16px;
+}
+
+/* منطقة الأسماء */
+.couple-names-box .couple-names {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 1.2;
+}
+
+.couple-names-box .groom-name,
+.couple-names-box .bride-name {
+    display: block;
+    margin: 0;
+    color: #344d40;
+    font-family: "Amiri", serif;
+    font-size: clamp(30px, 8vw, 38px);
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.couple-names-box .groom-name {
+    transform: translateX(8px);
+    z-index: 2;
+}
+
+.couple-names-box .bride-name {
+    margin-top: -2px;
+    transform: translateX(-8px);
+    z-index: 1;
+}
+
+.couple-names-box .names-divider {
+    position: relative;
+    z-index: 3;
+    margin: -1px 0;
+    color: #b28b43;
+    font-family: Georgia, serif;
+    font-size: 23px;
+    line-height: 1;
+}
+
+
+/* تغيير لون نص الدعوة فقط إلى الذهبي */
+.message-card > p {
+    color: #B08D57;
+}
+
+/* تنسيق صندوق نص الدعوة */
+.message-card {
+    background: #FFFCF5;
+    border: 1.5px solid #B08D57;
+    border-radius: 18px;
+    padding: 25px 20px;
+    text-align: center;
+    box-shadow: 0 5px 18px rgba(176, 141, 87, 0.12);
+}
+
+/* اللون الذهبي لنص الدعوة */
+.message-card > p {
+    color: #B08D57;
+    font-family: 'Amiri', serif;
+    font-size: 19px;
+    line-height: 2;
+    text-align: center;
+    margin: 12px 0;
+}
+
+/* تمييز أسماء العائلتين */
+.message-card > .invitation-family {
+    font-weight: bold;
+    font-size: 21px;
+    line-height: 1.9;
+}
+
+/* تمييز اسم العريس */
+.message-card > .invitation-groom {
+    font-weight: bold;
+    font-size: 21px;
+}
+
+/* البسملة */
+.message-card > .invitation-bismillah {
+    font-size: 23px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* عبارة الختام */
+.message-card > .invitation-closing {
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+/* زر احصل على الاتجاهات باللون الذهبي والكتابة بالأبيض */
+.directions-button {
+    background-color: #B08D57;
+    color: #FFFFFF;
+    border-color: #B08D57;
+}
+
+.directions-button:hover {
+    background-color: #967344;
+    color: #FFFFFF;
+}
